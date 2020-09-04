@@ -15,7 +15,7 @@ Tekstiohjelma, joka lukee Wordia
 KEHITETTÄVÄ IDEA:
 
 Tehdään pohja ohjelmalle, johon sisältyy toimiva interface ja toiminnot kuten nappulat,
-exit, skaalaaminen (toimii kaikilla näytöillä), windows ohjelma, tarkoitus ohjelmalle ja muut toiminnot lisätään myöhemmin osaamisen karttuessa
+exit, skaalaaminen (toimii kaikilla näytöillä), windows ohjelma, tumma teema, tarkoitus ohjelmalle ja muut toiminnot lisätään myöhemmin osaamisen karttuessa
 
 4. Kirjaa ylös mitä tavoitteen saavuttaminen voisi vaatia & 5. Tarkenna tavoitteeseen pääsemisen askeleita
 
@@ -28,7 +28,7 @@ Miten lähdemme liikkeelle?
 
 Mitä tarvitsemme?
 QT libary
-Git Hub osaaminen, Git Hub tiimityöskentely
+Github osaaminen, Github tiimityöskentely
 
 Muita lisättäviä ideoita: 
 Kielivalikko
