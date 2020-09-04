@@ -2,24 +2,33 @@
 
 Tehdään joku ohjelma mikä toimii itsenäisesti, ei esim. netin välityksellä > Pelkästään pythonilla tehty
 
-IDEOITA:
+1. Luo lista asioista joista olet kiinnostunut
+
+KIINNOSTAVIA IDEOITA:
 Yksinkertainen peli
 Monitoimityökalu muistilappu
 Portfolio
 Syntikka
 Tekstiohjelma, joka lukee Wordia
 
-
+2. Valitse yksi (kiinnostavin) aihe listaltasi & 3. Aseta konkreettinen tavoite.
 KEHITETTÄVÄ IDEA:
+
 Tehdään pohja ohjelmalle, johon sisältyy toimiva interface ja toiminnot kuten nappulat,
 exit, skaalaaminen (toimii kaikilla näytöillä), windows ohjelma, tarkoitus ohjelmalle ja muut toiminnot lisätään myöhemmin osaamisen karttuessa
+
+4. Kirjaa ylös mitä tavoitteen saavuttaminen voisi vaatia & 5. Tarkenna tavoitteeseen pääsemisen askeleita
 
 Miten lähdemme liikkeelle?
 
 1.	Tehdään pythonilla tyhjä ikkuna
-2.	Tehdään nappulat ikkunaan ja keksitään niille tehtävät
-3.  Tehdään muita toimintoja
-
+2.  Tehdään nappula, jolla pystyy sulkemaan ikkunan
+3.	Tehdään muita nappuloita ikkunaan ja keksitään niille tehtävät
+5.  Tehdään muita toimintoja
 
 Mitä tarvitsemme?
 QT libary
+Git Hub osaaminen, Git Hub tiimityöskentely
+
+Muita lisättäviä ideoita: 
+Kielivalikko
