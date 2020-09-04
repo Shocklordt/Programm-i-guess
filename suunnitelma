@@ -21,8 +21,8 @@ exit, skaalaaminen (toimii kaikilla näytöillä), windows ohjelma, tumma teema,
 
 Miten lähdemme liikkeelle?
 
-1.	Tehdään pythonilla tyhjä ikkuna
-2.  Tehdään nappula, jolla pystyy sulkemaan ikkunan
+1.	Tehdään pythonilla tyhjä ikkuna (tumma, skaalautuva)
+2.  Tehdään nappula, jolla pystyy sulkemaan ikkunan (exit)
 3.	Tehdään muita nappuloita ikkunaan ja keksitään niille tehtävät
 5.  Tehdään muita toimintoja
 
