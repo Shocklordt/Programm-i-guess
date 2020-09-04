@@ -26,6 +26,9 @@ Miten lähdemme liikkeelle?
 3.Tehdään muita nappuloita ikkunaan ja keksitään niille tehtävät
 5.Tehdään muita toimintoja
 
+Ohejelmassa
+1. Ensin ohjelman pitäisi tulkita näytön resoluutio ja päätellä missä koossa ikkuana avataan
+
 Mitä tarvitsemme?
 QT libary
 Github osaaminen, Github tiimityöskentely
