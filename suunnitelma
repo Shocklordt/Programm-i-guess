@@ -1,6 +1,7 @@
-04.09.2020
+SUUNNITELMA KEHITYSPROJEKTISTA
 
-Tehdään joku ohjelma mikä toimii itsenäisesti, ei esim. netin välityksellä > Pelkästään pythonilla tehty
+04.09.2020
+Arseniy Sergeenko, Miiro Pyysing & Elmeri Niskanen 
 
 1. Luo lista asioista joista olet kiinnostunut
 
@@ -11,23 +12,37 @@ Portfolio
 Syntikka
 Tekstiohjelma, joka lukee Wordia
 
+Tehdään joku ohjelma mikä toimii itsenäisesti, ei esim. netin välityksellä
+
 2. Valitse yksi (kiinnostavin) aihe listaltasi & 3. Aseta konkreettinen tavoite.
+
 KEHITETTÄVÄ IDEA:
 
-Tehdään pohja ohjelmalle, johon sisältyy toimiva interface ja toiminnot kuten nappulat,
-exit, skaalaaminen (toimii kaikilla näytöillä), windows ohjelma, tumma teema, tarkoitus ohjelmalle ja muut toiminnot lisätään myöhemmin osaamisen karttuessa
+Tehdään pohja windowsissa toimivalle ohjelmalle, johon sisältyy toimiva interface ja toimintoja kuten nappulat.
+Toimintoja, joita voitaisiin tehdä: exit, skaalaaminen (toimii kaikilla näytöillä), tumma teema jne..
+
+Varsinainen tarkoitus ohjelmalle / käyttötarkoitus selkenee projektin edetessä. Lisätään myöhemmin lisää toimintoja osaamisen karttuessa.
 
 4. Kirjaa ylös mitä tavoitteen saavuttaminen voisi vaatia & 5. Tarkenna tavoitteeseen pääsemisen askeleita
 
 Miten lähdemme liikkeelle?
+
+Jokainen googlaa / katsoo videoita siitä, miten Github ja sen tiimi työskentely ominaisuudet toimivat sekä miten QTlibrary toimii.
+Tiistaina 8.9.2020 klo 14:30 jatketaan etänä projektin työsmämistä yhdessä. Ennen tiistaita viestitään Discordin kautta.
+Pyritään tallentamaan kaikki projektiin liittyvä Githubiin.
 
 1.Tehdään pythonilla tyhjä ikkuna (tumma, skaalautuva)
 2.Tehdään nappula, jolla pystyy sulkemaan ikkunan (exit)
 3.Tehdään muita nappuloita ikkunaan ja keksitään niille tehtävät
 5.Tehdään muita toimintoja
 
-Ohejelmassa
+Tarkkemmin:
 1. Ensin ohjelman pitäisi tulkita näytön resoluutio ja päätellä missä koossa ikkuana avataan
+2. Avata ikkuna
+3. Luodaa exit nappi, jolla poistua ikkunasta / sulkea ohjelma
+.......
+.....
+....
 
 Mitä tarvitsemme?
 QT libary
