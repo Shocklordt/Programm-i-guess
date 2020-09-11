@@ -1,3 +1,13 @@
+'''
+This is a gui base for CYTHAMES
+Functionality will be added later
+
+VERSION 0.01
+
+'''
+
+
+
 import sys 
 import random
 from PySide2 import QtCore, QtWidgets, QtGui
