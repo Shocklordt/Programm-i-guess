@@ -20,7 +20,7 @@ class Widgetini (QtWidgets.QWidget):
 
         self.button = QtWidgets.QPushButton("For your clicking pleausre")
         self.text = QtWidgets.QLabel("Hello World")
-        self.text.setAlignment(QtCore.Qt.AlignCenter)
+        self.text.setAlignment(QtCore.Qt.AlignHCenter)
 
 
         self.layout = QtWidgets.QVBoxLayout()
@@ -37,7 +37,7 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication([])
 
     widget = Widgetini()
-    widget.resize (1920, 1080)
+    widget.resize (800, 600)
     widget.show()
 
     sys.exit(app.exec_())
