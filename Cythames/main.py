@@ -18,9 +18,13 @@ class Widgetini (QtWidgets.QWidget):
 
         self.hello = ["Hei maailma"]
 
-        self.button = QtWidgets.QPushButton("For your clicking pleausre")
+        self.button = QtWidgets.QPushButton("For your clicking pleausre") 
         self.text = QtWidgets.QLabel("Hello World")
+<<<<<<< HEAD
         self.text.setAlignment(QtCore.Qt.AlignHCenter)
+=======
+        self.text.setAlignment(QtCore.Qt.AlignRCenter)
+>>>>>>> f29719ee02fce502c4edfda0320bad25697ecfd8
 
 
         self.layout = QtWidgets.QVBoxLayout()

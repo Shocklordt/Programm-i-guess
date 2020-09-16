@@ -1,6 +1,0 @@
-'''
-hei
-hei 
-'''
-
-print("hei")
