@@ -18,16 +18,25 @@ class Widgetini (QtWidgets.QWidget):
         self.layout.addWidget(self.button)
         self.setLayout(self.layout)
 
+        #klikkaus kutsuu magic fuktiota
         self.button.clicked.connect(self.magic)
+
         
+        # tehdään muuttuja jolla saadaan vaihdettua fuktion sisällä boolia / true / falsea 
         self.valinta = False
 
+    # magic fuktio sisältää 2 vaihtoehtoa siitä mitä napin painalluksesta tapahtuu, riippuen siitä mikä testi on näkyvillä
     def magic(self):
+
+        # jos valinta on False niin vaihda tekstiksi (self.hei)
         if self.valinta == False:
             self.text.setText(self.hei)
+
+        # jos valinta on True niin vaihda tekstiksi (self.hello)    
         elif self.valinta == True:
             self.text.setText(self.hello)
-
+            
+        # self valinta vaihtuu, joka kerta päin vastaiseksi. NOT komento sisältää itsessään vaihdon.
         self.valinta = not(self.valinta)      
 
 
