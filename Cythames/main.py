@@ -16,13 +16,16 @@ class Widgetini (QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
 
+        # määritetään funktiot, jotka sisältää pelkästään tekstin
         self.hello = "Hello World"
         self.hei = "Hei Maailma"
 
-        self.button = QtWidgets.QPushButton("For your clicking pleausre") 
+        # luodaan nappi
+        self.button = QtWidgets.QPushButton("Button 1") 
         self.text = QtWidgets.QLabel(self.hello)
         self.text.setAlignment(QtCore.Qt.AlignHCenter)
 
+        # luodaan layout ohjelmalle
         self.layout = QtWidgets.QVBoxLayout()
         self.layout.addWidget(self.text)
         self.layout.addWidget(self.button)
