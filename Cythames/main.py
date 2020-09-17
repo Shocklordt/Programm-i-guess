@@ -2,7 +2,7 @@
 This is a gui base for CYTHAMES
 Functionality will be added later
 
-VERSION 0.01
+VERSION 0.03
 
 '''
 
