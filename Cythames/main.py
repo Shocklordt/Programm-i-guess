@@ -2,7 +2,7 @@
 This is a gui base for CYTHAMES
 Functionality will be added later
 
-VERSION 0.01
+VERSION 0.03
 
 '''
 
@@ -17,19 +17,22 @@ class Widgetini (QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
 
-        # setup darktheme
+          # setup darktheme
         app.setStyleSheet(qdarkstyle.load_stylesheet_pyside2())
         app.setStyleSheet(qdarkstyle.load_stylesheet(qt_api="pyside2"))
 
         self.setWindowTitle("Cythames") # lisää ikkunalle tittelin
 
+        # määritetään funktiot, jotka sisältää pelkästään tekstin
         self.hello = "Hello World"
         self.hei = "Hei Maailma"
 
-        self.button = QtWidgets.QPushButton("For your clicking pleausre") 
+        # luodaan nappi
+        self.button = QtWidgets.QPushButton("Button 1") 
         self.text = QtWidgets.QLabel(self.hello)
         self.text.setAlignment(QtCore.Qt.AlignHCenter)
 
+        # luodaan layout ohjelmalle
         self.layout = QtWidgets.QVBoxLayout()
         self.layout.addWidget(self.text)
         self.layout.addWidget(self.button)
