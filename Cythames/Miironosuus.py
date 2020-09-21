@@ -6,8 +6,6 @@ VERSION 0.03
 
 '''
 
-
-
 import sys 
 import random
 import qdarkstyle
@@ -47,6 +45,8 @@ class Widgetini (QtWidgets.QWidget):
         self.button1.clicked.connect(self.magic) # klikatessa nappia kutsuu magic funktiota
         self.valinta = False # Boolean muuttuja, muuttaa painalluksen lopputulosta
 
+        self.button2.clicked.connect(self.newwindow) #klikatessa kutsuu newwindow funktiota
+
     def magic(self): # määritetään magic funktiota jossa on 2 vaihtoehtoa klikkauksen lopputuloksesta
         if self.valinta == False: # jos valinta on False niin vaihda tekstiksi (self.hei)
             self.text.setText(self.hei)
@@ -56,7 +56,7 @@ class Widgetini (QtWidgets.QWidget):
 
         self.valinta = not(self.valinta) # self valinta vaihtuu, joka kerta päin vastaiseksi. Not komento sisältää itsessään vaihdon.
 
-     def newwindow (self): # määritetään newwindow funktio, joka avaa uuden ikkunan kun nappia 2 painetaan
+    def newwindow (self): # määritetään newwindow funktio, joka avaa uuden ikkunan kun nappia 2 painetaan
             self.myotherwindow = OtherWindow()
             self.myotherwindow.show()
 
