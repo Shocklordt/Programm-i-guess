@@ -57,14 +57,14 @@ class Widgetini (QtWidgets.QWidget):
         self.valinta = not(self.valinta) # self valinta vaihtuu, joka kerta päin vastaiseksi. Not komento sisältää itsessään vaihdon.
 
     def newwindow (self): # määritetään newwindow funktio, joka avaa uuden ikkunan kun nappia 2 painetaan
+            self.layout = QtWidgets.QVBoxLayout()
             self.myotherwindow = OtherWindow()
             self.myotherwindow.show()
 
-class OtherWindow(QtWidgets.QMainWindow,QPushButton):
+class OtherWindow(QtWidgets.QMainWindow): #määrietllään toisen ikkunan aukeaminen ja se millainen ikkuna on
     def __init__(self):
         super(OtherWindow,self).__init__()
         self.layout = QtWidgets.QVBoxLayout()
-        self.layout.addWidget(self.text)
         self.setLayout(self.layout)
         
 if __name__ == "__main__":
