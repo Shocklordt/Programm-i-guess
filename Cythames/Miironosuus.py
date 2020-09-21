@@ -24,7 +24,7 @@ class Widgetini (QtWidgets.QWidget):
         # määritetään funktiot, jotka sisältää pelkästään tekstin
         self.hello = "Hello World"
         self.hei = "Hei Maailma"
-        self.ikkuna = "Avaa uusi ikkuna"
+        self.ikkuna = "Avasut uuden ikkunan"
 
         # luodaan nappi
         self.button1 = QtWidgets.QPushButton("Button 1") 
@@ -38,7 +38,7 @@ class Widgetini (QtWidgets.QWidget):
         # luodaan layout ohjelmalle
         self.layout = QtWidgets.QVBoxLayout()
         self.layout.addWidget(self.text)
-        self.layout.addWidget(self.button1)
+        self.layout.addWidget(self.button1)     
         self.layout.addWidget(self.button2)
         self.setLayout(self.layout)
 
