@@ -60,6 +60,7 @@ class Widgetini (QtWidgets.QWidget):
             self.layout = QtWidgets.QVBoxLayout()
             self.myotherwindow = OtherWindow()
             self.myotherwindow.show()
+    
 
 class OtherWindow(QtWidgets.QMainWindow): #määrietllään toisen ikkunan aukeaminen ja se millainen ikkuna on
     def __init__(self):
