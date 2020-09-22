@@ -24,7 +24,7 @@ class Widgetini (QtWidgets.QWidget):
         # määritetään funktiot, jotka sisältää pelkästään tekstin
         self.hello = "Hello World"
         self.hei = "Hei Maailma"
-        self.ikkuna = "Avasut uuden ikkunan"
+        self.ikkuna = "Avasit uuden ikkunan"
 
         # luodaan nappi
         self.button1 = QtWidgets.QPushButton("Button 1") 
