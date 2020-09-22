@@ -24,15 +24,15 @@ class Widgetini (QtWidgets.QWidget):
         # määritetään funktiot, jotka sisältää pelkästään tekstin
         self.hello = "Hello World"
         self.hei = "Hei Maailma"
-        self.ikkuna = "Avasit uuden ikkunan"
+        self.ikkuna = "Avasit uuden ikkunan" # !! UUSI lisätty uusi otsikko, joka tulisi uuteen ikkunaan
 
         # luodaan nappi
-        self.button1 = QtWidgets.QPushButton("Button 1") 
+        self.button1 = QtWidgets.QPushButton("Button 1") # !! UUSI  vaihdettu nimi 1
         self.text = QtWidgets.QLabel(self.hello)
         self.text.setAlignment(QtCore.Qt.AlignHCenter)
 
         # luodaan nappi
-        self.button2 = QtWidgets.QPushButton("Button 2")
+        self.button2 = QtWidgets.QPushButton("Button 2") # !! UUSI  luotu toinen nappi ja annettu nimeksi 2
         self.text = QtWidgets.QLabel() 
         
         # luodaan layout ohjelmalle
@@ -45,7 +45,7 @@ class Widgetini (QtWidgets.QWidget):
         self.button1.clicked.connect(self.magic) # klikatessa nappia kutsuu magic funktiota
         self.valinta = False # Boolean muuttuja, muuttaa painalluksen lopputulosta
 
-        self.button2.clicked.connect(self.newwindow) #klikatessa kutsuu newwindow funktiota
+        self.button2.clicked.connect(self.newwindow) # !! UUSI klikatessa kutsuu newwindow funktiota
 
     def magic(self): # määritetään magic funktiota jossa on 2 vaihtoehtoa klikkauksen lopputuloksesta
         if self.valinta == False: # jos valinta on False niin vaihda tekstiksi (self.hei)
@@ -56,13 +56,13 @@ class Widgetini (QtWidgets.QWidget):
 
         self.valinta = not(self.valinta) # self valinta vaihtuu, joka kerta päin vastaiseksi. Not komento sisältää itsessään vaihdon.
 
-    def newwindow (self): # määritetään newwindow funktio, joka avaa uuden ikkunan kun nappia 2 painetaan
+    def newwindow (self): # !! UUSI määritetään newwindow funktio, joka avaa uuden ikkunan kun nappia 2 painetaan
             self.layout = QtWidgets.QVBoxLayout()
             self.myotherwindow = OtherWindow()
             self.myotherwindow.show()
     
 
-class OtherWindow(QtWidgets.QMainWindow): #määrietllään toisen ikkunan aukeaminen ja se millainen ikkuna on
+class OtherWindow(QtWidgets.QMainWindow): # !! UUSI määrietllään toisen ikkunan aukeaminen ja se millainen ikkuna on
     def __init__(self):
         super(OtherWindow,self).__init__()
         self.layout = QtWidgets.QVBoxLayout()
