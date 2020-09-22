@@ -24,7 +24,7 @@ class Widgetini (QtWidgets.QWidget):
         # määritetään funktiot, jotka sisältää pelkästään tekstin
         self.hello = "Hello World"
         self.hei = "Hei Maailma"
-        self.ikkuna = "Avasit uuden ikkunan" # !! UUSI lisätty uusi otsikko, joka tulisi uuteen ikkunaan
+        
 
         # luodaan nappi
         self.button1 = QtWidgets.QPushButton("Button 1") # !! UUSI  vaihdettu nimi 1
@@ -68,6 +68,8 @@ class OtherWindow(QtWidgets.QMainWindow): # !! UUSI määrietllään toisen ikku
         self.layout = QtWidgets.QVBoxLayout()
         self.setLayout(self.layout)
         
+        self.ikkuna = "Avasit uuden ikkunan" # !! UUSI lisätty uusi otsikko, joka tulisi uuteen ikkunaan
+
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
 
