@@ -7,7 +7,9 @@ VERSION 0.11
 
 
 import sys
-from PySide2 import QtWidgets, QtGui, QtCore
+from PySide2.QtWidgets import QApplication, QMainWindow, QAction, QVBoxLayout
+from PySide2.QtGui import *
+from PySide2.QtCore import *
 
 
 class Widget(QtWidgets.QWidget):

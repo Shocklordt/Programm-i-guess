@@ -1,4 +1,4 @@
-from PySide2.QtWidgets import QApplication,QMainWindow, QAction, QVBoxLayout
+from PySide2.QtWidgets import QApplication, QMainWindow, QAction, QVBoxLayout
 import sys
 from PySide2.QtGui import QIcon
  
