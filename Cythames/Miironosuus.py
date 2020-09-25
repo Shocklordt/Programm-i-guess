@@ -19,7 +19,7 @@ class Window(QMainWindow):
                 color: #ebdddd;
         }
         """
-
+        self.setStyleSheet(self.stylesheet)
         self.setWindowTitle("Cythames")
         self.showMaximized()
         self.create_menu()
