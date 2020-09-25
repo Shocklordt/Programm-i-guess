@@ -5,8 +5,16 @@ from PySide2.QtGui import QIcon
 class Window(QMainWindow):
     def __init__(self):
         super().__init__()
-        # Ohjelman CSS teema
-        self.stylesheet = """
+        
+        self.style()
+        self.setWindowTitle("Cythames")
+        self.showMaximized()
+        self.create_menu()
+        self.show()
+
+    def style(self):
+
+        self.setStyleSheet ("""
             QWidget {
                 background-color: #383738;
         }
@@ -25,7 +33,7 @@ class Window(QMainWindow):
             QMenuBar::item {
                 spacing: 3px;           
                 padding: 2px 10px;
-                background-color: rgb(210,105,30);
+                background-color: #294d29;
                 color: rgb(255,255,255);  
                 border-radius: 5px;
             }
@@ -47,17 +55,17 @@ class Window(QMainWindow):
                 background-color: transparent;
             }
             QMenu::item:selected { 
-                background-color: #654321;
+                background-color: #1ce81c;
                 color: rgb(255,255,255);
             }
-            """
-        
-        self.setStyleSheet(self.stylesheet)
-        self.setWindowTitle("Cythames")
-        self.showMaximized()
-        self.create_menu()
-        self.show()
- 
+            QMenu::item:pressed {
+                background-color: #e81cb8
+                color: #00f2ff
+            }
+            """)
+
+
+
     def create_menu(self):
         mainMenu = self.menuBar()
         fileMenu = mainMenu.addMenu("File")
