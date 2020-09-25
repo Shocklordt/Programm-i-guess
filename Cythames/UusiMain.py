@@ -10,8 +10,20 @@ import sys
 from PySide2 import QtWidgets, QtGui, QtCore
 
 
-class MainWindow(QtWidgets.QMainWindow):
+class Widget(QtWidgets.QWidget):
     def __init__(self):
+        QtWidgets.QWidget.__init__(self)
+
+        
+
+
+
+
+        
+
+
+class MainWindow(QtWidgets.QMainWindow):
+    def __init__(self, widget):
         QtWidgets.QMainWindow.__init__(self)
 
         self.setWindowTitle("Cythames")
@@ -20,20 +32,6 @@ class MainWindow(QtWidgets.QMainWindow):
         self.menu = self.menuBar()
         self.file_menu = self.menu.addMenu("File")
 
-        # Exit QAction käyttäen Ctrl+Q shortcuttia
-        exit_action = QtWidgets.QAction("Exit", self)
-        exit_action.setShortcut("Ctrl+Q")
-
-        self.file_menu.addAction(exit_action)
-
-        element.signal_name.connect(slot_name)
-        exit_action.triggered.connect(slot_name)
-
-
-
-
-
-
 
 
 
@@ -41,9 +39,10 @@ class MainWindow(QtWidgets.QMainWindow):
 
 if __name__ == "__main__":
 
-    app = QtWidgets.QApplication([])
+    app = QtWidgets.QApplication(sys.argv)
 
-    window = MainWindow()
+    widget = Widget()
+    window = MainWindow(widget)
     window.showMaximized()
     window.show()
 
