@@ -10,8 +10,10 @@ import sys
 import random
 import qdarkstyle
 from PySide2 import QtCore, QtWidgets, QtGui
+from PySide2.QtWidgets import QApplication, QWidget
+from PySide2.QtGui import QIcon
 
-class Widgetini (QtWidgets.QWidget):
+class Widgetini (QtWidgets.QWidget, QMainWindow):
     def __init__(self):
         super().__init__()
 
@@ -19,12 +21,23 @@ class Widgetini (QtWidgets.QWidget):
         app.setStyleSheet(qdarkstyle.load_stylesheet_pyside2())
         app.setStyleSheet(qdarkstyle.load_stylesheet(qt_api="pyside2"))
 
+        self.create_menu()
+        self.show()
+
         self.setWindowTitle("Cythames") # lisää ikkunalle tittelin
+
+    def create_menu(self):
+            mainmenu = self.m
+            filemenu = mainmenu.addmenu('File')
+            viewmenu = mainmenu.addmenu('View')
+            editmenu = mainmenu.addmenu('Edit')
+
 
         # määritetään funktiot, jotka sisältää pelkästään tekstin
         self.hello = "Hello World"
         self.hei = "Hei Maailma"
-        
+    
+        # TULEE VIELÄ SELVITTÄÄ MITEN TEKSTI SAADAAN JO ALKUUN IKKUNAAN
 
         # luodaan nappi
         self.button1 = QtWidgets.QPushButton("Button 1") # !! UUSI  vaihdettu nimi 1
@@ -41,6 +54,7 @@ class Widgetini (QtWidgets.QWidget):
         self.layout.addWidget(self.button1)     
         self.layout.addWidget(self.button2)
         self.setLayout(self.layout)
+       
 
         self.button1.clicked.connect(self.magic) # klikatessa nappia kutsuu magic funktiota
         self.valinta = False # Boolean muuttuja, muuttaa painalluksen lopputulosta
@@ -65,6 +79,7 @@ class Widgetini (QtWidgets.QWidget):
 class OtherWindow(QtWidgets.QMainWindow): # !! UUSI määrietllään toisen ikkunan aukeaminen ja se millainen ikkuna on
     def __init__(self):
         super(OtherWindow,self).__init__()
+        self.setWindowTitle("Other window") # lisää ikkunalle tittelin
         self.layout = QtWidgets.QVBoxLayout()
         self.setLayout(self.layout)
         
