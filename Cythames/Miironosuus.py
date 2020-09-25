@@ -18,6 +18,10 @@ class Window(QMainWindow):
             QLabel {
                 color: #ebdddd;
         }
+
+            QMenuBar {
+                color: #ffffff
+        }
         """
         self.setStyleSheet(self.stylesheet)
         self.setWindowTitle("Cythames")
@@ -35,8 +39,8 @@ class Window(QMainWindow):
         exitAction.triggered.connect(self.exit_app)
  
         fileMenu.addAction(exitAction)
- 
-
+        
+        
     def exit_app(self):
         self.close()
  
