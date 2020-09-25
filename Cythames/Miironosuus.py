@@ -8,10 +8,10 @@ import sys
 import random
 import qdarkstyle
 from PySide2 import QtCore, QtWidgets, QtGui
-from PySide2.QtWidgets import QApplication, QWidget
+from PySide2.QtWidgets import QApplication, QWidget, QApplication, QMainWindow, QAction
 from PySide2.QtGui import QIcon
 
-class Widgetini (QtWidgets.QWidget ):
+class Widgetini (QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
 
@@ -64,14 +64,30 @@ class Widgetini (QtWidgets.QWidget ):
             self.myotherwindow.show()
     
 
-class OtherWindow(QtWidgets.QMainWindow): # !! UUSI määrietllään toisen ikkunan aukeaminen ja se millainen ikkuna on
+class OtherWindow(QMainWindow): # !! UUSI määrietllään toisen ikkunan aukeaminen ja se millainen ikkuna on
     def __init__(self):
         super(OtherWindow,self).__init__()
         self.setWindowTitle("Other window") # lisää ikkunalle tittelin
         self.layout = QtWidgets.QVBoxLayout()
         self.setLayout(self.layout)
+        self.create_menu()
+        self.show()
+
+    def create_menu(self):
+        mainMenu = self.menuBar()
+        fileMenu = self.menuBar.addmenu('file')
+
+        exitAction = QAction(QIcon('exit.png'), "Exit", self)
+        exitAction.setShortcut("Ctrl+X")
+        exitAction.triggered.connect(self.exit_app)
+
+        fileMenu.addAction(exitAction)
+
+    def exit_app(self:):
+        self.close()
         
-        self.ikkuna = "Avasit uuden ikkunan" # !! UUSI lisätty uusi otsikko, joka tulisi uuteen ikkunaan
+        
+# self.ikkuna = "Avasit uuden ikkunan" # !! UUSI lisätty uusi otsikko, joka tulisi uuteen ikkunaan
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
