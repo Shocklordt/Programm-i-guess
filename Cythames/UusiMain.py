@@ -7,26 +7,19 @@ VERSION 0.11
 
 
 import sys
-from PySide2.QtWidgets import QApplication, QMainWindow, QAction, QVBoxLayout
+from PySide2.QtWidgets import QApplication, QMainWindow, QAction, QVBoxLayout, QWidget
 from PySide2.QtGui import *
 from PySide2.QtCore import *
 
 
-class Widget(QtWidgets.QWidget):
+class Widget(QWidget):
     def __init__(self):
-        QtWidgets.QWidget.__init__(self)
-
-        
+        QWidget.__init__(self)
 
 
-
-
-        
-
-
-class MainWindow(QtWidgets.QMainWindow):
+class MainWindow(QMainWindow):
     def __init__(self, widget):
-        QtWidgets.QMainWindow.__init__(self)
+        QMainWindow.__init__(self)
 
         self.setWindowTitle("Cythames")
 
@@ -35,13 +28,9 @@ class MainWindow(QtWidgets.QMainWindow):
         self.file_menu = self.menu.addMenu("File")
 
 
-
-
-
-
 if __name__ == "__main__":
 
-    app = QtWidgets.QApplication(sys.argv)
+    app = QApplication(sys.argv)
 
     widget = Widget()
     window = MainWindow(widget)
