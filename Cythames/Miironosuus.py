@@ -1,9 +1,7 @@
 '''
 This is a gui base for CYTHAMES
 Functionality will be added later
-
 VERSION 0.03
-
 '''
 
 import sys 
@@ -13,7 +11,7 @@ from PySide2 import QtCore, QtWidgets, QtGui
 from PySide2.QtWidgets import QApplication, QWidget
 from PySide2.QtGui import QIcon
 
-class Widgetini (QtWidgets.QWidget, QMainWindow):
+class Widgetini (QtWidgets.QWidget ):
     def __init__(self):
         super().__init__()
 
@@ -21,17 +19,7 @@ class Widgetini (QtWidgets.QWidget, QMainWindow):
         app.setStyleSheet(qdarkstyle.load_stylesheet_pyside2())
         app.setStyleSheet(qdarkstyle.load_stylesheet(qt_api="pyside2"))
 
-        self.create_menu()
-        self.show()
-
         self.setWindowTitle("Cythames") # lisää ikkunalle tittelin
-
-    def create_menu(self):
-            mainmenu = self.m
-            filemenu = mainmenu.addmenu('File')
-            viewmenu = mainmenu.addmenu('View')
-            editmenu = mainmenu.addmenu('Edit')
-
 
         # määritetään funktiot, jotka sisältää pelkästään tekstin
         self.hello = "Hello World"
