@@ -22,9 +22,7 @@ class Window(QMainWindow):
 
         self.setWindowTitle("Cythames")
         self.showMaximized()
-        
         self.create_menu()
- 
         self.show()
  
     def create_menu(self):
