@@ -7,12 +7,10 @@ import sys
 import random
 import qdarkstyle
 from PySide2 import QtCore, QtWidgets, QtGui
-class Widgetini (QtWidgets.QWidget):
+class Widgetini (QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
-          # setup darktheme
-        app.setStyleSheet(qdarkstyle.load_stylesheet_pyside2())
-        app.setStyleSheet(qdarkstyle.load_stylesheet(qt_api="pyside2"))
+        
         self.setWindowTitle("Cythames") # lisää ikkunalle tittelin
         # määritetään funktiot, jotka sisältää pelkästään tekstin
         self.hello = "Hello World"
