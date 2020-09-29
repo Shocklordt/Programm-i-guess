@@ -2,74 +2,130 @@
 This is a gui base for CYTHAMES
 Functionality will be added later
 
-VERSION 0.03
+VERSION 0.11
 
 '''
-
+from PySide2.QtWidgets import QApplication, QMainWindow, QAction, QVBoxLayout, QWidget, QWidgetAction, QCheckBox
 import sys
-from PySide2 import QtCore, QtWidgets, QtGui
+from PySide2.QtGui import QIcon
 
-class Widgetini (QtWidgets.QWidget):
+class Window(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        
+        
+        self.setWindowTitle("Cythames")
+        self.showMaximized()
+        self.create_menu()
+        self.show()
 
+
+    def create_menu(self):
+        mainMenu = self.menuBar()
+        fileMenu = mainMenu.addMenu("File")
+ 
+        exitAction = QAction(QIcon('exit.png'), "Exit", self)
+        exitAction.setShortcut("Ctrl+X")
+        exitAction.triggered.connect(self.exit_app)
+
+        optionsAction = QAction("Options", self)
+        optionsAction.triggered.connect(self.OptionsWindowOpen)
+ 
+        fileMenu.addAction(exitAction)
+        fileMenu.addAction(optionsAction)
+    
+    def OptionsWindowOpen(self):
+        self.layout = QVBoxLayout()
+        self.OptionsWindowOpen = Options()
+        self.OptionsWindowOpen.show()
+
+    def exit_app(self):
+        self.close()
+
+class Options(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.setWindowTitle("Cythames")
-
-        # Ohjelman CSS teema
-        self.stylesheet = """
-            QWidget {
-                background-color: #383738;
-        }
-            QPushButton {
-                background-color: #657e8a;
-                color: #ebdddd;
-                border: 2px solid #000000;
-        }
-            QLabel {
-                color: #ebdddd;
-        }
-        """
-
-        self.hello = "Hello World"
-        self.hei = "Hei maailma"
-
-        self.button1 = QtWidgets.QPushButton("Button 1")
-        self.button2 = QtWidgets.QPushButton("Button 2")
-
-        self.text = QtWidgets.QLabel(self.hello)
-        self.text.setAlignment(QtCore.Qt.AlignHCenter)
-
-        self.layout = QtWidgets.QVBoxLayout()
-        self.layout.addWidget(self.text)
-        self.layout.addWidget(self.button1)
-        self.layout.addWidget(self.button2)
+        self.layout = QVBoxLayout()
         self.setLayout(self.layout)
 
-        self.button1.clicked.connect(self.magic)
-        self.valinta = False
+        self.setWindowTitle("Options")
+        self.setGeometry(300, 300, 300, 300)
+        self.ChangeStyle
 
-        app.setStyleSheet(self.stylesheet)
+        SyleOption_checkbox = QCheckBox("Dark Theme", )
 
-    def magic(self):
-        if self.valinta == False:
-            self.text.setText(self.hei)
-        
-        elif self.valinta == True:
-            self.text.setText(self.hello)
+        def ChangeStyle(self, state):
+            if state == Qt.Checked:
+                styleMain.style
 
-        self.valinta = not(self.valinta)
-
-    
-if __name__ == "__main__":
-
-    app = QtWidgets.QApplication(sys.argv)
-
-    widget = Widgetini()
-
-    widget.showMaximized()
-
-    widget.show()
+            else:
+                styleMain.style_zero
 
 
-    sys.exit(app.exec_())
+styleMain = Window.setStyleSheet(style or style_zero)
+
+
+style_zero = """
+"""
+
+style = """
+    QWidget {
+        background-color: #383738;
+}
+    QPushButton {
+        background-color: #657e8a;
+        color: #ebdddd;
+        border: 2px solid #000000;
+}
+    QLabel {
+        color: #ebdddd;
+}
+    QMenuBar {
+        background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                    stop:0 lightgray, stop:1 darkgray);
+}
+    QMenuBar::item {
+        spacing: 3px;           
+        padding: 2px 10px;
+        background-color: #294d29;
+        color: rgb(255,255,255);  
+        border-radius: 5px;
+}
+    QMenuBar::item:selected {    
+        background-color: #f70000;
+}
+    QMenuBar::item:pressed {
+        background: #0026ff;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */  
+
+    QMenu {
+        background-color: #ABABAB;   
+        border: 1px solid black;
+        margin: 2px;
+}
+    QMenu::item {
+        background-color: transparent;
+}
+    QMenu::item:selected { 
+        background-color: #1ce81c;
+        color: rgb(255,255,255);
+}
+    QMenu::item:pressed {
+        background-color: #e81cb8
+        color: #00f2ff
+}
+"""
+
+
+
+
+
+
+ 
+myApp = QApplication(sys.argv)
+window = Window()
+myApp.exec_()
+sys.exit(0)
