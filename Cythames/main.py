@@ -15,12 +15,10 @@ class Window(QMainWindow):
         super().__init__()
         
         
-        
         self.setWindowTitle("Cythames")
         self.showMaximized()
         self.create_menu()
         self.show()
-
 
     def create_menu(self):
         mainMenu = self.menuBar()
@@ -38,15 +36,17 @@ class Window(QMainWindow):
     
     def OptionsWindowOpen(self):
         self.layout = QVBoxLayout()
-        self.OptionsWindowOpen = Options()
+        self.OptionsWindowOpen = Options(self)
         self.OptionsWindowOpen.show()
 
     def exit_app(self):
         self.close()
 
 class Options(QWidget):
-    def __init__(self):
+    def __init__(self, parent):
         super().__init__()
+
+        self.parent = parent
 
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
@@ -62,9 +62,11 @@ class Options(QWidget):
     def ChangeStyle(self, state):
         if state == Qt.Checked:
             self.setStyleSheet(style)
+            self.parent.setStyleSheet(style)
 
         else:
             self.setStyleSheet(style_zero)
+            self.parent.setStyleSheet(style_zero)
             
 
 
