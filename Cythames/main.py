@@ -8,10 +8,12 @@ VERSION 0.11
 from PySide2.QtWidgets import QApplication, QMainWindow, QAction, QVBoxLayout, QWidget, QWidgetAction, QCheckBox
 import sys
 from PySide2.QtGui import QIcon
+from PySide2.QtCore import *
 
 class Window(QMainWindow):
     def __init__(self):
         super().__init__()
+        
         
         
         self.setWindowTitle("Cythames")
@@ -51,19 +53,20 @@ class Options(QWidget):
 
         self.setWindowTitle("Options")
         self.setGeometry(300, 300, 300, 300)
-        self.ChangeStyle
-
-        SyleOption_checkbox = QCheckBox("Dark Theme", )
-
-        def ChangeStyle(self, state):
-            if state == Qt.Checked:
-                styleMain.style
-
-            else:
-                styleMain.style_zero
 
 
-styleMain = Window.setStyleSheet(style or style_zero)
+        StyleOption_checkbox = QCheckBox("Dark Theme", self)
+        StyleOption_checkbox.stateChanged.connect(self.ChangeStyle)
+        
+
+    def ChangeStyle(self, state):
+        if state == Qt.Checked:
+            self.setStyleSheet(style)
+
+        else:
+            self.setStyleSheet(style_zero)
+            
+
 
 
 style_zero = """

@@ -51,19 +51,10 @@ class Options(QWidget):
 
         self.setWindowTitle("Options")
         self.setGeometry(300, 300, 300, 300)
-        self.ChangeStyle
 
         SyleOption_checkbox = QCheckBox("Dark Theme", )
 
-        def ChangeStyle(self, state):
-            if state == Qt.Checked:
-                styleMain.style
 
-            else:
-                styleMain.style_zero
-
-
-styleMain = Window.setStyleSheet(style or style_zero)
 
 
 style_zero = """
