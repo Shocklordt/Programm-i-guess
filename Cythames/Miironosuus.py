@@ -42,18 +42,20 @@ class Window(QMainWindow):
 
     def nappula (self):
         self.nappi = QPushButton("NAPPI", self)
+        self.nappi.move(100,100)
         self.nappi.clicked.connect(self.magic)
+        self.nappi.show()
 
     def magic (self):
-        if self.valinta == False: 
+        if self.valinta == False:
+            self.hei = "Hei" 
             self.text.setText(self.hei)
-            self.hei = "Hei"
 
         elif self.valinta == True: 
-            self.text.setText(self.hello)
             self.hello = "Hello"
+            self.text.setText(self.hello)
 
-        self.valinta = not(self.valinta) 
+        self.valinta = not(self.valinta)
 
     def exit_app(self):
         self.close()
