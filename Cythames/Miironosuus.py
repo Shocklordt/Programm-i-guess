@@ -41,9 +41,12 @@ class Window(QMainWindow):
         self.OptionsWindowOpen.show()
 
     def nappula (self):
-        self.nappi = QPushButton("NAPPI", self)
+        self.nappi = QPushButton(self)
         self.nappi.move(100,100)
         self.nappi.clicked.connect(self.magic)
+        self.hei = "Hei" 
+        self.nappi.setText(self.hei)
+        self.valinta = False
         self.nappi.show()
 
     def magic (self):
