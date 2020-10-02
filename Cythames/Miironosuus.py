@@ -5,21 +5,35 @@ Functionality will be added later
 VERSION 0.11
 
 '''
-from PySide2.QtWidgets import QApplication, QMainWindow, QAction, QVBoxLayout, QWidget, QWidgetAction, QCheckBox, QPushButton
+from PySide2.QtWidgets import *
 import sys
-from PySide2.QtGui import QIcon
+from PySide2.QtGui import *
 from PySide2.QtCore import *
 
 class Window(QMainWindow):
     def __init__(self):
         super().__init__()
-        
+
+        self.label_main()
         
         self.setWindowTitle("Cythames")
         self.showMaximized()
         self.create_menu()
         self.nappula()
         self.show()
+
+    def label_main(self):
+        self.magic()
+
+        self.hei = "Hei Maailma"
+        self.hello = "Hello World"
+
+        self.layout = QVBoxLayout()
+        self.label = QLabel(self.hei)
+        
+        self.layout.addWidget(self.label)
+        self.setLayout(self.layout)
+  
 
     def create_menu(self):
         mainMenu = self.menuBar()
@@ -41,22 +55,18 @@ class Window(QMainWindow):
         self.OptionsWindowOpen.show()
 
     def nappula (self):
-        self.nappi = QPushButton(self)
+        self.nappi = QPushButton("Nappi", self)
         self.nappi.move(100,100)
         self.nappi.clicked.connect(self.magic)
-        self.hei = "Hei" 
-        self.nappi.setText(self.hei)
         self.valinta = False
         self.nappi.show()
 
     def magic (self):
         if self.valinta == False:
-            self.hei = "Hei" 
-            self.text.setText(self.hei)
+            self.label.setText(self.hei)
 
         elif self.valinta == True: 
-            self.hello = "Hello"
-            self.text.setText(self.hello)
+            self.label.setText(self.hello)
 
         self.valinta = not(self.valinta)
 
