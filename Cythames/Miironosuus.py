@@ -77,9 +77,7 @@ class Window(QMainWindow):
         fileMenu.addAction(exitAction)
 
     def nappula (self):
-        nappi = QPushButton("Nappi",self)
-        nappi.resize(100,100)
-        nappi.move(100,100)
+        nappi = QPushButton("Nappi")
         self.show()
 
     def exit_app(self):
