@@ -5,7 +5,7 @@ Functionality will be added later
 VERSION 0.11
 
 '''
-from PySide2.QtWidgets import QApplication, QMainWindow, QAction, QVBoxLayout, QWidget, QWidgetAction, QCheckBox
+from PySide2.QtWidgets import QApplication, QMainWindow, QAction, QVBoxLayout, QWidget, QWidgetAction, QCheckBox, QPushButton
 import sys
 from PySide2.QtGui import QIcon
 from PySide2.QtCore import *
@@ -18,13 +18,14 @@ class Window(QMainWindow):
         self.setWindowTitle("Cythames")
         self.showMaximized()
         self.create_menu()
+        self.nappula()
         self.show()
 
     def create_menu(self):
         mainMenu = self.menuBar()
         fileMenu = mainMenu.addMenu("File")
  
-        exitAction = QAction(QIcon('exit.png'), "Exit", self)
+        exitAction = QAction("Exit", self)
         exitAction.setShortcut("Ctrl+X")
         exitAction.triggered.connect(self.exit_app)
 
@@ -40,9 +41,19 @@ class Window(QMainWindow):
         self.OptionsWindowOpen.show()
 
     def nappula (self):
-        self.hello = "Hello World!"
-        nappi = QPushButton("For your cliking pleasure")
+        self.nappi = QPushButton("NAPPI", self)
         self.nappi.clicked.connect(self.magic)
+
+    def magic (self):
+        if self.valinta == False: 
+            self.text.setText(self.hei)
+            self.hei = "Hei"
+
+        elif self.valinta == True: 
+            self.text.setText(self.hello)
+            self.hello = "Hello"
+
+        self.valinta = not(self.valinta) 
 
     def exit_app(self):
         self.close()
@@ -72,9 +83,6 @@ class Options(QWidget):
         else:
             self.setStyleSheet(style_zero)
             self.parent.setStyleSheet(style_zero)
-            
-
-
 
 style_zero = """
 """
@@ -129,12 +137,6 @@ style = """
 }
 """
 
-
-
-
-
-
- 
 myApp = QApplication(sys.argv)
 window = Window()
 myApp.exec_()
