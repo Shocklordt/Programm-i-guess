@@ -5,78 +5,93 @@ Functionality will be added later
 VERSION 0.11
 
 '''
+
+# Python second party packages
 from PySide2.QtWidgets import QApplication, QMainWindow, QAction, QVBoxLayout, QWidget, QWidgetAction, QCheckBox
-import sys
 from PySide2.QtGui import QIcon
 from PySide2.QtCore import *
 
-class Window(QMainWindow):
+# Python internal packages
+import sys
+
+
+# Pääikkuna objektina
+class Window(QMainWindow):  
     def __init__(self):
         super().__init__()
         
         
-        self.setWindowTitle("Cythames")
-        self.showMaximized()
-        self.create_menu()
-        self.show()
+        self.setWindowTitle("Cythames") # Pääikkunan titteli
+        self.showMaximized() # Avaa ikkunan näytön resoluutiossa
+        self.create_menu() # Kutsuu create_menu funktiota
+        self.show() # Piirtää objektin näyttöön
 
-    def create_menu(self):
-        mainMenu = self.menuBar()
-        fileMenu = mainMenu.addMenu("File")
- 
-        exitAction = QAction(QIcon('exit.png'), "Exit", self)
-        exitAction.setShortcut("Ctrl+X")
-        exitAction.triggered.connect(self.exit_app)
+    # Menu-palkin def funktiona
+    def create_menu(self): 
 
-        optionsAction = QAction("Options", self)
-        optionsAction.triggered.connect(self.OptionsWindowOpen)
+        mainMenu = self.menuBar() #Luo menu-valikko
+        fileMenu = mainMenu.addMenu("File") #Luo ensimmäisen "File" palikan
  
-        fileMenu.addAction(exitAction)
-        fileMenu.addAction(optionsAction)
+        exitAction = QAction(QIcon('exit.png'), "Exit", self) # Luo exit toiminnan ja sille napin nimi valikossa
+        exitAction.setShortcut("Ctrl+X") # Antaa pikatoiminnan exitille
+        exitAction.triggered.connect(self.exit_app) # Kun exit nappia painetaan kutsuu exit_app funktiota
+
+        optionsAction = QAction("Options", self) # Luo asetukset-napin
+        optionsAction.triggered.connect(self.OptionsWindowOpen) # Kun asetukset-nappia painetaan se kutsuu OptionsWindowOpen funktiota
+ 
+        fileMenu.addAction(exitAction) # Piirtää exit-toiminnon nappia
+        fileMenu.addAction(optionsAction) # Piirtää options-toiminnon nappia
     
-    def OptionsWindowOpen(self):
-        self.layout = QVBoxLayout()
-        self.OptionsWindowOpen = Options(self)
-        self.OptionsWindowOpen.show()
+    # Funktio, jonka avulla avataan uusi options-ikkunaa
+    def OptionsWindowOpen(self): 
+        self.layout = QVBoxLayout() # Määritetään self.layout QVBox funktioksi
+        self.OptionsWindow_1 = Options(self) # Muuttuja viittaa uuteen options objektiin, eli uuteen options ikkunaan
+        self.OptionsWindow_1.show() # Piirtäää viitatun ikkunan
 
-    def exit_app(self):
+    # Funktio, joka sulkee ohjelmaa
+    def exit_app(self): 
         self.close()
 
+# Options ikkunan Objekti
 class Options(QWidget):
     def __init__(self, parent):
         super().__init__()
 
-        self.parent = parent
+        self.parent = parent    # Määritä objektin vanhemmaksi, jonka avulla kaikki muut ikkunan ottaa tämän ikkunan asetukset
 
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
 
-        self.setWindowTitle("Options")
-        self.setGeometry(300, 300, 300, 300)
+        self.setWindowTitle("Options") 
+        self.setGeometry(300, 300, 300, 300) # Muuttaa ikkunan geometriaa
 
 
-        StyleOption_checkbox = QCheckBox("Dark Theme", self)
-        StyleOption_checkbox.stateChanged.connect(self.ChangeStyle)
+        StyleOption_checkbox = QCheckBox("Dark Theme", self) # Luo valintaruudun ja antaa sille nimen
+        StyleOption_checkbox.stateChanged.connect(self.ChangeStyle) # Kun valintaruutu painetaan, se kutsuu ChangeStyle funktiota
         
-
+    # Funktio, joka laittaa päälle dark theme
     def ChangeStyle(self, state):
-        if state == Qt.Checked:
-            self.setStyleSheet(style)
-            self.parent.setStyleSheet(style)
+        if state == Qt.Checked: # Tarkistaa, että jos ruutu on päällä
+            self.setStyleSheet(style_dark_theme) # laittaa Options classin päälle tyylin style_dark_theme 
+            self.parent.setStyleSheet(style_dark_theme) # laittaa style_dark_theme tyylin kaikille muille ikkunoille
 
-        else:
-            self.setStyleSheet(style_zero)
-            self.parent.setStyleSheet(style_zero)
+        else: # muuten 
+            self.setStyleSheet(style_zero) # laittaa Options classin päälle tyylin style_zero
+            self.parent.setStyleSheet(style_zero) # laittaa style_zero tyylin kaikille muille ikkunoille
             
 
 
+# Määritetään ohjelman tyylit
 
+# Tyyli oletusarvona
 style_zero = """
 """
 
-style = """
+# Tumma tyyli
+style_dark_theme = """
     QWidget {
         background-color: #383738;
+        color: rgb(255,255,255);
 }
     QPushButton {
         background-color: #657e8a;
@@ -129,7 +144,7 @@ style = """
 
 
 
- 
+# Standard app loop
 myApp = QApplication(sys.argv)
 window = Window()
 myApp.exec_()
