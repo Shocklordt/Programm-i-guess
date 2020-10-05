@@ -14,6 +14,7 @@ class Window(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Cythames")
+
         self.label_main()
         self.showMaximized()
         self.create_menu()
@@ -23,11 +24,25 @@ class Window(QMainWindow):
     def label_main(self):
         self.hei = "Hei Maailma"
         self.hello = "Hello World"
-        self.label = QLabel("Label")
-        self.label.setAlignment(Qt.AlignCenter)
-        self.label.show()
+        self.label = QLabel(self.hello)
 
-    def create_menu(self):
+        self.frame = QFrame()
+        self.frame.setGeometry(500, 0, 500, 500)
+
+        self.setCentralWidget(self.frame)
+
+        self.frameLayout = QVBoxLayout()
+        self.frameLayout.addWidget(self.label)
+        self.frame.setLayout(self.frameLayout)
+
+       
+        self.mainLayout = QVBoxLayout()
+        self.mainLayout.addWidget(self.frame)
+        self.setLayout(self.mainLayout)
+
+        self.show()
+
+    def create_menu (self):
         mainMenu = self.menuBar()
         fileMenu = mainMenu.addMenu("File")
  
@@ -76,7 +91,6 @@ class Options(QWidget):
 
         self.setWindowTitle("Options")
         self.setGeometry(300, 300, 300, 300)
-
 
         StyleOption_checkbox = QCheckBox("Dark Theme", self)
         StyleOption_checkbox.stateChanged.connect(self.ChangeStyle)
