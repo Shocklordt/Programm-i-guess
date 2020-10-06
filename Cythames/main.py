@@ -2,12 +2,13 @@
 This is a gui base for CYTHAMES
 Functionality will be added later
 
-VERSION 0.11
+VERSION 0.13
 
 '''
 
 # Python second party packages
-from PySide2.QtWidgets import QApplication, QMainWindow, QAction, QVBoxLayout, QWidget, QWidgetAction, QCheckBox
+from PySide2.QtWidgets import (QApplication, QMainWindow, QAction, QVBoxLayout, 
+                                QWidget, QWidgetAction, QCheckBox, QLabel, QFrame, QPushButton)
 from PySide2.QtGui import QIcon
 from PySide2.QtCore import *
 
@@ -19,8 +20,9 @@ import sys
 class Window(QMainWindow):  
     def __init__(self):
         super().__init__()
-        
-        
+
+        self.label_main() # Kutsuu otsikon funktiota
+        self.nappula() # Kutsuu nappulan funktiota
         self.setWindowTitle("Cythames") # Pääikkunan titteli
         self.showMaximized() # Avaa ikkunan näytön resoluutiossa
         self.create_menu() # Kutsuu create_menu funktiota
@@ -41,6 +43,45 @@ class Window(QMainWindow):
  
         fileMenu.addAction(exitAction) # Piirtää exit-toiminnon nappia
         fileMenu.addAction(optionsAction) # Piirtää options-toiminnon nappia
+    
+    # Luo otsikko-tyyppisen def statementin
+    def label_main(self): 
+        self.hei = "Hei Maailma"
+        self.hello = "Hello World"
+        self.label = QLabel(self.hello)
+
+        self.frame = QFrame()
+        self.frame.setGeometry(500, 0, 500, 500)
+
+        self.setCentralWidget(self.frame)
+
+        self.frameLayout = QVBoxLayout()
+        self.frameLayout.addWidget(self.label)
+        self.frame.setLayout(self.frameLayout)
+
+        self.mainLayout = QVBoxLayout()
+        self.mainLayout.addWidget(self.frame)
+        self.setLayout(self.mainLayout)
+
+        self.show()
+
+    # Luodaan nappula
+    def nappula (self):
+        self.nappi = QPushButton("Nappi", self)
+        self.nappi.move(100,100)
+        self.nappi.clicked.connect(self.magic)
+        self.valinta = False
+        self.nappi.show()
+    
+    # Luodaan algoritmi, joka vaihtaa otsikon nappulan painaessa
+    def magic (self):
+        if self.valinta == False:
+            self.label.setText(self.hei)
+
+        elif self.valinta == True: 
+            self.label.setText(self.hello)
+
+        self.valinta = not(self.valinta)
     
     # Funktio, jonka avulla avataan uusi options-ikkunaa
     def OptionsWindowOpen(self): 
@@ -81,7 +122,7 @@ class Options(QWidget):
             
 
 
-# Määritetään ohjelman tyylit
+# Määritetään ohjelman tyylit CSS:n avulla
 
 # Tyyli oletusarvona
 style_zero = """
