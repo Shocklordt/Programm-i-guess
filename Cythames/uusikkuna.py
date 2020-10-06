@@ -35,7 +35,6 @@ class Window(QMainWindow):
         self.frameLayout.addWidget(self.label)
         self.frame.setLayout(self.frameLayout)
 
-       
         self.mainLayout = QVBoxLayout()
         self.mainLayout.addWidget(self.frame)
         self.setLayout(self.mainLayout)
